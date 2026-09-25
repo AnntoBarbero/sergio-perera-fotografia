@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Galería de fotografías de Sergio Perera. Fotografía deportiva, recitales, eventos y más.">
+        <title>Galería | Sergio Perera Fotografía</title>
+        <!-- GOOGLE FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/galeria.css">
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <header class="site-header" id="siteHeader">
+            <a href="index.html" class="brand">
+                <span class="brand-mark">S P</span>
+                <span class="brand-text">
+                    <strong>SERGIO PERERA</strong>
+                    <small>FOTOGRAFÍA</small>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html">Inicio</a>
+                <a href="galeria.html" class="active">Trabajos</a>
+                <a href="index.html#contacto">Contacto</a>
+            </nav>
+
+            <div class="header-actions">
+            <button class="cart-button" id="cartButton" type="button" aria-label="Abrir carrito">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <span class="cart-count" id="cartCount"> 0</span>
+            </button>
+
+            <a href="galeria.html" class="gallery-button" >VER GALERÍA</a>
+            <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menú" aria-expanded="false" >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            </div>
+        </header>
+
+        <!-- CARRITO -->
+        <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+            <aside class="cart-drawer"  id="cartDrawer" aria-label="Carrito de compras">
+                <div class="cart-header">
+                    <div>
+                        <p class="eyebrow red">CARRITO</p>
+                        <h3>Tu selección</h3>
+                    </div>
+                    <button class="cart-close" id="cartClose" type="button" aria-label="Cerrar carrito">×</button>
+                </div>
+
+                <ul class="cart-items" id="cartItems"></ul>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Total</span>
+                        <strong id="cartTotal">$0</strong>
+                    </div>
+                    <button type="button" class="button button-primary cart-checkout">FINALIZAR PEDIDO</button>
+                </div>
+            </aside>
+
+        <!-- GALERÍA -->
+        <main class="gallery-page">
+            <!-- ENCABEZADO -->
+            <section class="gallery-hero">
+                <div class="section-container">
+                    <p class="eyebrow red">SERGIO PERERA</p>
+                    <h1>GALERÍA</h1>
+                    <p class="gallery-intro">
+                        Explorá los trabajos y encontrá
+                        ese momento que querés conservar.
+                    </p>
+                </div>
+            </section>
+
+            <!-- FILTROS -->
+            <section class="gallery-section">
+                <div class="section-container">
+                    <div class="gallery-filters" id="galleryFilters">
+                        <button class="gallery-filter active" data-category="todas" type="button">TODAS</button>
+                        <button class="gallery-filter" data-category="deportiva" type="button">DEPORTIVA</button>
+                        <button class="gallery-filter" data-category="recitales" type="button">RECITALES</button>
+                        <button class="gallery-filter" data-category="eventos" type="button">EVENTOS</button>
+                    </div>
+
+                    <!-- VISTA DE PARTIDOS -->
+                    <div class="gallery-view" id="matchesView">
+                        <div class="gallery-section-heading">
+                            <div>
+                                <p class="eyebrow red">DEPORTIVA</p>
+                                <h2>PARTIDOS</h2>
+                            </div>
+                            <p>
+                            Seleccioná un partido para ver
+                            todas sus fotografías.
+                            </p>
+                        </div>
+
+                        <div class="matches-grid" id="matchesGrid"></div>
+                    </div>
+
+                    <!--  VISTA DE FOTOS -->
+                    <div class="gallery-view photos-view" id="photosView" hidden>
+                        <div class="photos-header">
+                            <button type="button" class="back-gallery" id="backToMatches"><span> ←</span>VOLVER A PARTIDOS</button>
+                            <div class="photos-title">
+                                <p class="eyebrow red" id="photosCategory">DEPORTIVA</p>
+                                <h2 id="photosMatchTitle">PARTIDO</h2>
+                                <p id="photosMatchDate">FECHA</p>
+                            </div>
+                        </div>
+                            <div class="photos-grid" id="photosGrid"></div>
+                    </div>
+
+                    <!-- MENSAJE SIN CONTENIDO -->
+                    <div class="gallery-empty" id="galleryEmpty" hidden>
+                    <i class="fa-regular fa-images"></i>
+                    <h3>Próximamente</h3>
+                    <p>
+                        Todavía no hay fotografías disponibles
+                        para esta categoría.
+                    </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- MODAL DE FOTO -->
+        <div class="photo-modal" id="photoModal" aria-hidden="true">
+            <div class="photo-modal-overlay" id="photoModalOverlay"></div>
+            <div class="photo-modal-content" role="dialog" aria-modal="true" aria-label="Fotografía">
+                <button type="button" class="photo-modal-close" id="photoModalClose" aria-label="Cerrar fotografía">×</button>
+                <div class="photo-modal-image">
+                    <img id="modalPhoto" src="" alt="">
+                </div>
+
+                <div class="photo-modal-info">
+                    <div>
+                        <p class="eyebrow red" id="modalPhotoCategory">DEPORTIVA</p>
+                        <h3 id="modalPhotoTitle">Fotografía</h3>
+                        <p id="modalPhotoMatch">Partido</p>
+                    </div>
+
+                    <div class="photo-modal-purchase">
+                        <strong id="modalPhotoPrice">$5.000</strong>
+                        <button type="button" class="button button-primary" id="modalAddToCart">QUIERO ESTA FOTO<span> → </span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="section-container">
+                <div class="footer-main">
+
+                    <div class="footer-brand">
+                        <a href="index.html" class="brand">
+                            <span class="brand-mark">S P</span>
+                            <span class="brand-text">
+                                <strong>SERGIO PERERA</strong>
+                                <small>FOTOGRAFÍA</small>
+                            </span>
+                        </a>
+                        <p>
+                            Fotografía deportiva, recitales,
+                            eventos y momentos únicos.
+                        </p>
+                    </div>
+
+                    <div class="footer-links">
+                        <p class="footer-title"> NAVEGACIÓN </p>
+                        <a href="index.html">Inicio </a>
+                        <a href="galeria.html">Galería</a>
+                        <a href="index.html#contacto">Contacto</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <p class="footer-title">REDES</p>
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                    © 2026 Sergio Perera Fotografía.
+                    Todos los derechos reservados.
+                    </p>
+                    <a href="#" class="back-top">VOLVER ARRIBA<span>↑</span></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT -->
+        <script src="js/index.js"></script>
+        <script src="js/galeria.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,729 @@
+/* SERGIO PERERA — GALERÍA */
+
+.gallery-page {
+  min-height: 100vh;
+  background: var(--black);
+}
+
+/* HERO GALERÍA */
+.gallery-hero {
+  padding: 180px 0 100px;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(240, 24, 47, .08),
+      transparent 35%
+    );
+}
+
+.gallery-hero h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(65px, 10vw, 130px);
+  font-weight: 500;
+  line-height: .85;
+  letter-spacing: -5px;
+}
+
+.gallery-intro {
+  max-width: 480px;
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* SECCIÓN GALERÍA */
+.gallery-section {
+  padding: 80px 0 140px;
+}
+
+/* FILTROS */
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 80px;
+}
+
+.gallery-filter {
+  padding: 12px 18px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: #aaa;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: .25s ease;
+}
+
+.gallery-filter:hover {
+  border-color: var(--red);
+  color: white;
+}
+
+.gallery-filter.active {
+  border-color: var(--red);
+  background: var(--red);
+  color: white;
+}
+
+/* ENCABEZADO DE SECCIÓN */
+.gallery-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.gallery-section-heading h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: .9;
+}
+
+.gallery-section-heading > p {
+  max-width: 320px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* PARTIDOS */
+.matches-grid {
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap: 15px;
+}
+
+.match-card {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  background: #111;
+  cursor: pointer;
+}
+
+.match-card-image {
+  position: absolute;
+  inset: 0;
+}
+
+.match-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+
+.match-card:hover
+.match-card-image img {
+  transform: scale(1.06);
+}
+
+.match-card-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.95),
+      rgba(0,0,0,.1) 70%
+    );
+}
+
+.match-card-info {
+  position: absolute;
+  z-index: 2;
+  left: 28px;
+  right: 28px;
+  bottom: 25px;
+}
+
+.match-card-number {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--red);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.match-card-info h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1;
+}
+
+.match-card-info p {
+  margin-top: 9px;
+  color: #aaa;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.match-card-action {
+  position: absolute;
+  z-index: 3;
+  top: 22px;
+  right: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  background: rgba(0, 0, 0, .3);
+  color: white;
+  font-size: 17px;
+  transition: .25s ease;
+}
+
+.match-card:hover
+.match-card-action {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+/* VISTA FOTOS= */
+.photos-view {
+  animation:galleryFade .35s ease;
+}
+
+@keyframes galleryFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HEADER FOTOS */
+.photos-header {
+  margin-bottom: 45px;
+}
+
+.back-gallery {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #aaa;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: .25s ease;
+}
+
+.back-gallery span {
+  font-size: 18px;
+}
+
+.back-gallery:hover {
+  color: var(--red);
+}
+
+.photos-title h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(42px, 6vw, 75px);
+  line-height: .9;
+  letter-spacing: -2px;
+}
+
+.photos-title > p:last-child {
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* GRID DE FOTOS */
+.photos-grid {
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap: 12px;
+}
+
+.photo-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #111;
+  cursor: pointer;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:transform .6s cubic-bezier(.2, .7, .2, 1);
+}
+
+.photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:linear-gradient(0deg, rgba(0,0,0,.85), transparent 50%);
+  pointer-events: none;
+}
+
+.photo-card-info {
+  position: absolute;
+  z-index: 2;
+  left: 18px;
+  right: 18px;
+  bottom: 17px;
+}
+
+.photo-card-info small {
+  color: var(--red);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.photo-card-info h3 {
+  margin-top: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+}
+
+.photo-card-buy {
+  position: absolute;
+  z-index: 3;
+  right: 15px;
+  bottom: 15px;
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .35);
+  background: rgba(0, 0, 0, .45);
+  color: white;
+  font-size: 12px;
+  transition: .25s ease;
+}
+
+.photo-card:hover
+.photo-card-buy {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* MODAL */
+.photo-modal {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.photo-modal.open {
+  display: flex;
+}
+
+.photo-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba( 0, 0, 0, .88);
+  backdrop-filter: blur(8px);
+}
+
+.photo-modal-content {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 95vw);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  background: #0d1013;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation:modalOpen .3s ease;
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.photo-modal-close {
+  position: absolute;
+  z-index: 5;
+  top: 15px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  background: rgba(0, 0, 0, .55);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  transition: .25s ease;
+}
+
+.photo-modal-close:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.photo-modal-image {
+  width: 100%;
+  height: min(65vh, 700px);
+  display: flex;
+  justify-content: center;
+  background: #050607;
+}
+
+.photo-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.photo-modal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 22px 25px;
+  border-top: 1px solid var(--border);
+}
+
+.photo-modal-info h3 {
+  margin-top: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 21px;
+}
+
+.photo-modal-info p:last-child {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.photo-modal-purchase {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.photo-modal-purchase > strong {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+.photo-modal-purchase .button {
+  white-space: nowrap;
+}
+
+/* EMPTY */
+.gallery-empty {
+  padding: 100px 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.gallery-empty i {
+  margin-bottom: 20px;
+  color: var(--red);
+  font-size: 35px;
+}
+
+.gallery-empty h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+}
+
+.gallery-empty p {
+  max-width: 400px;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* CAPA TRANSPARENTE PARA QUE NO SE HAGA LA DESCARGA */
+.foto-imagen {
+    position: relative;
+    overflow: hidden;
+}
+
+.foto-imagen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: transparent;
+    cursor: pointer;
+}
+
+.foto-imagen img {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+/* =========================================================
+   PROTECCIÓN DE PREVIEWS
+   ========================================================= */
+
+.foto-imagen,
+.foto-imagen img,
+.partido-imagen,
+.partido-imagen img,
+.modal-image-container,
+.modal-image-container img,
+#photoModal img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+/* Capa invisible sobre las fotos */
+.foto-imagen,
+.partido-imagen,
+.modal-image-container {
+    position: relative;
+}
+
+.foto-imagen::after,
+.partido-imagen::after,
+.modal-image-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    background: transparent;
+}
+
+/* La imagen queda debajo de la capa */
+.foto-imagen img,
+.partido-imagen img,
+.modal-image-container img {
+    position: relative;
+    z-index: 1;
+}
+
+/* RESPONSIVE — TABLET */
+@media (max-width: 1000px) {
+  .gallery-hero {
+    padding-top: 150px;
+  }
+
+  .matches-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .photos-grid {
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+/* RESPONSIVE — MOBILE */
+@media (max-width: 750px) {
+  .gallery-hero {
+    padding: 130px 0 70px;
+  }
+
+  .gallery-hero h1 {
+    font-size: 65px;
+    letter-spacing: -3px;
+  }
+
+  .gallery-section {
+    padding: 60px 0 90px;
+  }
+
+  .gallery-filters {
+    gap: 7px;
+    margin-bottom: 55px;
+  }
+
+  .gallery-filter {
+    padding: 10px 12px;
+    font-size: 8px;
+  }
+
+  .gallery-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .matches-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .match-card {
+    min-height: 350px;
+  }
+
+  .match-card-info {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .photos-grid {
+    grid-template-columns:1fr 1fr;
+    gap: 8px;
+  }
+
+  .photo-card-info {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .photo-card-info h3 {
+    font-size: 12px;
+  }
+
+  .photo-card-buy {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .photo-modal {
+    padding: 10px;
+  }
+
+  .photo-modal-content {
+    width: 100%;
+    max-height: 95vh;
+  }
+
+  .photo-modal-image {
+    height: 55vh;
+  }
+
+  .photo-modal-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .photo-modal-purchase {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .photo-modal-purchase .button {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* RESPONSIVE — MOBILE PEQUEÑO */
+@media (max-width: 480px) {
+  .gallery-hero h1 {
+    font-size: 55px;
+  }
+
+  .photos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-card {
+    aspect-ratio: 4 / 5;
+  }
+
+  .photo-modal-purchase {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .photo-modal-purchase > strong {
+    font-size: 20px;
+  }
+}
+
+/* PANTALLAS MUY PEQUEÑAS */
+@media (max-width: 360px) {
+  .gallery-hero {
+    padding: 115px 0 55px;
+  }
+
+  .gallery-hero h1 {
+    font-size: clamp(46px, 16vw, 55px);
+    letter-spacing: -2px;
+  }
+
+  .gallery-intro {
+    margin-top: 22px;
+    font-size: 13px;
+  }
+
+  .gallery-section {
+    padding: 48px 0 75px;
+  }
+
+  .gallery-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    margin-bottom: 45px;
+  }
+
+  .gallery-filter {
+    width: 100%;
+    padding: 11px 6px;
+    text-align: center;
+  }
+
+  .match-card {
+    min-height: 300px;
+  }
+
+  .match-card-info h3 {
+    font-size: 24px;
+  }
+
+  .photo-modal {
+    padding: 6px;
+  }
+
+  .photo-modal-content {
+    max-height: calc(100vh - 12px);
+  }
+
+  .photo-modal-image {
+    height: 42vh;
+  }
+
+  .photo-modal-info {
+    gap: 15px;
+    padding: 16px;
+  }
+
+  .photo-modal-purchase .button {
+    min-height: 44px;
+  }
+}

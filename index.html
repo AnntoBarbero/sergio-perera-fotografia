@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sergio Perera — Fotografía deportiva, recitales, eventos y momentos únicos.">
+    <title>Sergio Perera | Fotografía</title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">S P</span>
+        <span class="brand-text">
+          <strong>SERGIO PERERA</strong>
+          <small>FOTOGRAFÍA</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#categorias">Trabajos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button" id="cartButton" type="button" aria-label="Abrir carrito">
+          <i class="fa-solid fa-cart-shopping cart-icon"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <a href="galeria.html" class="gallery-button">VER GALERÍA</a>
+        <button class="menu-button" id="menuButton" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow red">CARRITO</p>
+          <h3>Tu selección</h3>
+        </div>
+
+        <button class="cart-close" id="cartClose" type="button" aria-label="Cerrar carrito" >×</button>
+      </div>
+
+      <ul class="cart-items" id="cartItems"></ul>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+
+        <button type="button" class="button button-primary cart-checkout">FINALIZAR PEDIDO</button>
+      </div>
+    </aside>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <p class="eyebrow">FOTOGRAFÍA · LA PAMPA</p>
+          <h1>MOMENTOS QUE<br><span>MERECEN QUEDAR</span></h1>
+
+          <p class="hero-description">
+            Fotografía deportiva, recitales,
+            eventos y momentos únicos.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#categorias" class="button button-primary">
+              EXPLORAR TRABAJOS
+              <span> →</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section class="intro-section">
+        <div class="section-container intro-grid">
+          <div>
+            <p class="eyebrow red">SERGIO PERERA</p>
+            <h2>FOTOGRAFÍA<br><span>CON HISTORIA</span></h2>
+          </div>
+
+          <div class="intro-text">
+            <p>
+              Cada fotografía tiene un momento
+              detrás. Una jugada, una emoción,
+              una mirada o una noche que no vuelve.
+            </p>
+
+            <p>
+              El objetivo es simple:
+              capturar ese instante y convertirlo
+              en algo que puedas conservar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATEGORÍAS -->
+      <section class="categories-section" id="categorias">
+        <div class="section-container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow red">TRABAJOS</p>
+              <h2>CATEGORÍAS</h2>
+            </div>
+
+            <a href="galeria.html" class="text-link">VER TODO<span>→</span></a>
+          </div>
+
+          <div class="categories-grid">
+            <!-- FÚTBOL -->
+            <a href="galeria.html?categoria=futbol" class="category-card category-large">
+              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85" alt="Fotografía de fútbol" loading="lazy">
+              <div class="category-overlay"></div>
+              <div class="category-info">
+                <span>01</span>
+                <h3>FÚTBOL</h3>
+                <p>Pasión · Intensidad · Juego</p>
+              </div>
+            </a>
+
+            <!-- RECITALES -->
+            <a href="galeria.html?categoria=recitales" class="category-card">
+              <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=85" alt="Fotografía de recital" loading="lazy">
+              <div class="category-overlay"></div>
+              <div class="category-info">
+                <span>02</span>
+                <h3>RECITALES</h3>
+                <p>Música · Energía · Escenario</p>
+              </div>
+            </a>
+
+            <!-- EVENTOS -->
+            <a href="galeria.html?categoria=eventos" class="category-card">
+              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85" alt="Fotografía de eventos" loading="lazy">
+
+              <div class="category-overlay"></div>
+              <div class="category-info">
+                <span>03</span>
+                <h3>EVENTOS</h3>
+                <p>Personas · Momentos · Historias</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+      <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="section-container">
+        <div class="footer-main">
+          <!-- MARCA -->
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+              <span class="footer-logo-mark">S P</span>
+              <span class="footer-logo-text">
+                <strong>SERGIO PERERA</strong>
+                <small>FOTOGRAFÍA</small>
+              </span>
+            </a>
+            <p>
+              Fotografía deportiva, recitales,
+              eventos y momentos que merecen quedar.
+            </p>
+          </div>
+
+          <!-- NAVEGACIÓN -->
+          <div class="footer-column">
+            <span class="footer-title">NAVEGACIÓN</span>
+            <nav class="footer-links">
+              <a href="#inicio">Inicio</a>
+              <a href="#categorias">Trabajos</a>
+              <a href="#contacto">Contacto</a>
+              <a href="galeria.html">Galería</a>
+            </nav>
+          </div>
+
+          <!-- CONTACTO -->
+          <div class="footer-column">
+            <span class="footer-title">CONTACTO</span>
+            <div class="footer-contact">
+              <a href="mailto:contacto@sergioperera.com">contacto@sergioperera.com</a>
+              <a href="https://instagram.com/" target="_blank">Instagram</a>
+              <a href="https://facebook.com/" target="_blank">Facebook</a>
+            </div>
+          </div>
+
+          <!-- VOLVER ARRIBA -->
+          <div class="footer-action">
+            <a href="#inicio" class="back-top" aria-label="Volver al inicio">
+              <span>VOLVER ARRIBA</span>
+              <strong>↑</strong>
+            </a>
+          </div>
+        </div>
+
+        <!-- LÍNEA INFERIOR -->
+        <div class="footer-bottom">
+          <p>
+            © 2026 SERGIO PERERA FOTOGRAFÍA.
+            TODOS LOS DERECHOS RESERVADOS.
+          </p>
+
+          <p>LA PAMPA · ARGENTINA</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>
